@@ -10,26 +10,41 @@ package timeofday;
  * */
 public class TimeOfDay {
 	
+	/**
+	 * 
+	 * @invar | 0 <= hours && hours <= 23
+	 * @invar | 0 <= minutes && minutes <= 59
+	 * */
+	private int hours;
+	private int minutes;
+	
 	// Geen documentatie bij getters
-	public int getHours() {throw new RuntimeException("Not yet implemented");}
+	public int getHours() {
+		return hours;
+	}
 	
-	public int getMinutes() {throw new RuntimeException("Not yet implemented");}
+	public int getMinutes() {
+		return minutes;
+	}
 	
 	
-	public int getMinutesSinceMidnight() {throw new RuntimeException("Not yet implemented");}
+	public int getMinutesSinceMidnight() {
+		return hours * 60 + minutes;
+	}
 
 	/**
 	 * Initialiseert het nieuwe object met gegeven uren en minuten.
 	 * 
 	 * @pre | 0 <= initialHours && initialHours <= 23
-	 * @pre | 0 <= initialMinutes && initialMinutes <= 23
+	 * @pre | 0 <= initialMinutes && initialMinutes <= 59
 	 * 
 	 * @post | getHours() == initialHours
 	 * @post | getMinutes() == initialMinutes
 	 * 
 	 * */
 	public TimeOfDay(int initialHours, int initialMinutes) {
-		throw new RuntimeException("Not yet implemented");
+		hours = initialHours;
+		minutes = initialMinutes;
 	}
 	
 	/**
@@ -42,9 +57,13 @@ public class TimeOfDay {
 	 * @post | getHours() == newHours
 	 * @post | getMinutes() == old(getMinutes())
 	 * */
-	public void setHours(int newHours) {throw new RuntimeException("Not yet implemented");}
+	public void setHours(int newHours) {
+		hours = newHours;
+	}
 	
-	public void setMinutes(int newMinutes) {throw new RuntimeException("Not yet implemented");}
+	public void setMinutes(int newMinutes) {
+		minutes = newMinutes;
+	}
 	
 	
 	/**
@@ -57,6 +76,9 @@ public class TimeOfDay {
 	 * @post | getMinutesSinceMidnight() == newMinutesSinceMidnight
 	 * 
 	 * */
-	public void setMinutesSinceMidnight(int newMinutesSinceMidnight) {throw new RuntimeException("Not yet implemented");} 
+	public void setMinutesSinceMidnight(int newMinutesSinceMidnight) {
+		hours = newMinutesSinceMidnight / 60;
+		minutes = newMinutesSinceMidnight % 60;
+	} 
 
 }

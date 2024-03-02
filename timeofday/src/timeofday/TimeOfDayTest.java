@@ -14,7 +14,7 @@ class TimeOfDayTest {
 		assertEquals(630, myTimeOfDay.getMinutesSinceMidnight());
 		
 		myTimeOfDay.setHours(11);
-		assertEquals(10, myTimeOfDay.getHours());
+		assertEquals(11, myTimeOfDay.getHours());
 		assertEquals(30, myTimeOfDay.getMinutes());
 		assertEquals(690, myTimeOfDay.getMinutesSinceMidnight());
 		
